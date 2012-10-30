@@ -1,0 +1,49 @@
+Class function - A really light copy of the MooTools’s Class function
+
+* Author:
+Luca Lazzarini ( lzzluca@gmail.com  http://nerdstuckathome.wordpress.com/ )
+
+* License:
+Dual licensed under the MIT (http://mit-license.org/) and GPL (http://www.gnu.org/licenses/gpl.html) licenses.
+
+* On the web:
+- http://nerdstuckathome.wordpress.com/http://nerdstuckathome.wordpress.com/2012/11/14/a-class-function-to-define-classes-in-javascript-with-mootools-like-syntax/
+- https://github.com/lzzluca/Class/
+
+* Version:
+1.0
+
+* Depends:
+No external dependencies
+
+* Description:
+"Class" function in Javascript: it is intended to be a really light copy of the MooTools’s Class function with basic features; i am working with jQuery at the moment and i miss this amazing function!
+
+* Goals:
+- Encourage objective Javascript instead of sequential programming (!)
+- MooTools syntax compatibility (means be allowed to move the code on MooTools or project like moo4q in the future)
+- Get an unique class-pattern (avoiding mixed code like using prototype and closures patterns togheter)
+- Moving the focus from the function to the prototype, for the functions constructor modelling
+- Get lighter classes by provide tools for code reusing 
+- Class powered by really light code, easy to be mantained by me (or you!)
+- Basic functionalities: extend, implement, parent method, the function “initialize” as constructor (and as minor: setOptions)
+
+* Todo:
+- Instantiate the Class should need the new operator, like the MooTools one.
+- The setOptions method is missed at the moment, i think it is really useful, inside the constructor, in a lots of situations.
+- If there is a this.parent() call from a sub method to a super that doesn't exist you should trigger an error (for MooTools compatibility).
+- As minor, classes from MooTools get these properties on their prototype:
+  parent, $constructor
+  The same properties are missed, or there are but with a different behaviour, using my Class function.
+  The same is for the instances of a class defined by MooTools, they get these property (missed or not the same behaviour using mine):
+  $caller, caller, $constructor, parent
+
+* How to build it:
+The Makefile is in src-min/ .
+The Makefile builds all the modules in src-dev/ in one file: src-min/class-min.js ; that is the file to include in your pages.
+To build your own classes-min.js, you should know that the Makefile looks for the Google's Closure Compiler:
+https://developers.google.com/closure/compiler/
+The path of the compiler is specified by the var in the Makefile.
+
+
+I wrote it in my current company, WCN (wcn.co.uk), and i was allowed to release it as open source. Thanks (particularly to Jack Hobson) you!
